@@ -1,31 +1,91 @@
 import * as React from "react"
-import { Link } from "gatsby"
-import { StaticImage } from "gatsby-plugin-image"
+import Helmet from 'react-helmet'
+import Post from '../components/Post';
+import Sidebar from '../components/Sidebar'
+import { graphql } from "gatsby"
 
 import Layout from "../components/layout"
-import Seo from "../components/seo"
 
-const IndexPage = () => (
-  <Layout>
-    <Seo title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <StaticImage
-      src="../images/gatsby-astronaut.png"
-      width={300}
-      quality={95}
-      formats={["auto", "webp", "avif"]}
-      alt="A Gatsby astronaut"
-      style={{ marginBottom: `1.45rem` }}
-    />
-    <p>
-      <Link to="/page-2/">Go to page 2</Link> <br />
-      <Link to="/using-typescript/">Go to "Using TypeScript"</Link> <br />
-      <Link to="/using-ssr">Go to "Using SSR"</Link> <br />
-      <Link to="/using-dsg">Go to "Using DSG"</Link>
-    </p>
-  </Layout>
-)
+class IndexPage extends React.Component {
+  render() {
+    const items = [];
+    const { title, subtitle } = this.props.data.site.siteMetadata;
+    const posts = this.props.data.allMarkdownRemark.edges;
+    posts.forEach((post) => {
+      items.push(<Post data={post} key={post.node.frontmatter.path} />);
+    });
+
+    return (
+      <Layout>
+        <div>
+          <Helmet>
+            <title>{title}</title>
+            <meta name="description" content={subtitle} />
+          </Helmet>
+          <Sidebar {...this.props} />
+          <div className="content">
+            <div className="content__inner">
+              {items}
+            </div>
+          </div>
+        </div>
+      </Layout>
+    )
+  }
+}
 
 export default IndexPage
+
+
+export const pageQuery = graphql`
+  query IndexQuery {
+    site {
+      siteMetadata {
+        title
+        subtitle
+        copyright
+        services {
+          label
+          path
+        }
+        projects {
+          label
+          path
+        }
+        about {
+          label
+          path
+        }
+        author {
+          name
+          email
+          twitter
+          github
+          medium
+        }
+      }
+    }
+    allMarkdownRemark(
+        limit: 1000,
+        filter: { frontmatter: { layout: { eq: "post" }, draft: { ne: true } } },
+        sort: { order: DESC, fields: [frontmatter___date] }
+      ){
+      edges {
+        node {
+          frontmatter {
+            title
+            date
+            category
+            description
+            path
+          }
+          fields {
+            tagSlugs
+            slug
+            categorySlug
+          }
+        }
+      }
+    }
+  }
+`;

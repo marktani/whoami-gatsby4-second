@@ -1,0 +1,145 @@
+@import "../../assets/scss/variables";
+@import "../../assets/scss/mixins";
+
+
+
+.label {
+  font-size: $typographic-base-font-size;
+  font-weight: 800;
+  border: 0;
+}
+
+.books {
+  @include margin-bottom(1);
+  &__list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      &-item {
+          padding: 0;
+          margin: 10px 0;
+          &-link {
+              font-size: $typographic-base-font-size;
+              color: $typographic-base-font-color;
+              font-weight: 400;
+              border: 0;
+              &:hover,
+              &:focus {
+                  color: $color-primary;
+                  border-bottom: 1px solid $color-primary;
+              }
+              &--active {
+                  color: $color-base;
+                  border-bottom: 1px solid $color-base;
+              }
+          }
+      }
+  }
+  &__hr {
+    margin-top: 12px;
+    margin-bottom: 12px;
+    border: 0;
+    color: $color-base;
+    display: block;
+    height: 26px;
+    margin-right: 200px;
+    margin-left: auto;
+    background-size: 100% 26px;
+    background-image: linear-gradient(to bottom, transparent 1px, transparent 13px, $color-gray 13px, $color-gray 14px, transparent 14px, transparent 26px);
+    width: 80%;
+  }
+}
+
+.menu {
+    @include margin-bottom(1);
+    &__list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        &-item {
+            padding: 0;
+            margin: 10px 0;
+            &-link {
+                font-size: $typographic-base-font-size;
+                color: $typographic-base-font-color;
+                font-weight: 400;
+                border: 0;
+                &:hover,
+                &:focus {
+                    color: $color-primary;
+                    border-bottom: 1px solid $color-primary;
+                }
+                &--active {
+                    color: $color-base;
+                    border-bottom: 1px solid $color-base;
+                }
+            }
+        }
+    }
+    &__hr {
+      margin-top: 12px;
+      margin-bottom: 12px;
+      border: 0;
+      color: $color-base;
+      display: block;
+      height: 26px;
+      margin-right: 200px;
+      margin-left: auto;
+      background-size: 100% 26px;
+      background-image: linear-gradient(to bottom, transparent 1px, transparent 13px, $color-gray 13px, $color-gray 14px, transparent 14px, transparent 26px);
+      width: 80%;
+    }
+}
+
+.content {
+  @include margin-bottom(1);
+  &__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    &-item {
+        padding: 0;
+        margin: 10px 0;
+        &-link {
+            font-size: $typographic-base-font-size;
+            color: $typographic-base-font-color;
+            font-weight: 400;
+            border: 0;
+            &:hover,
+            &:focus {
+                color: $color-primary;
+                border-bottom: 1px solid $color-primary;
+            }
+            &--active {
+                color: $color-base;
+                border-bottom: 1px solid $color-base;
+            }
+        }
+    }
+}
+&__top {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  &-item {
+      padding: 0;
+      margin: 10px 0;
+      &-link {
+          font-size: $typographic-base-font-size;
+          color: $typographic-base-font-color;
+          font-weight: 400;
+          border: 0;
+          &:hover,
+          &:focus {
+              color: $color-primary;
+              border-bottom: 1px solid $color-primary;
+          }
+          &--active {
+              color: $color-base;
+              border-bottom: 1px solid $color-base;
+          }
+      }
+  }
+}
+}
+
