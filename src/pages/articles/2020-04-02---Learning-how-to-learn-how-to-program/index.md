@@ -35,7 +35,7 @@ Let's take **Python** as an example. Python is a high-level and general-purpose 
 
 I suggest that you set developing it a high priority to develop a deep and fundamental understanding of the tools you use to code.
 
-## Research - 
+## Research
 
 ## Theory and Practice
 
@@ -68,12 +68,7 @@ Another way, and indeed a very effective one at that, to improve your coding ski
 > (This is not a quote by Antoine de Saint Exupery, but [something like that](https://quoteinvestigator.com/2015/08/25/sea/))
 
 Like building a ship, coding is not the end, it is a means to an end. With this perspective in mind, ask yourself "where do I want to go?" and then use coding as a way to get there, whether that is a small side project or the next unicorn startup!
-
-## Understand the details to understand the whole
-
-
-
-## Summary
+## Raw Notes
 
 * research
   * when and how to ask questions
