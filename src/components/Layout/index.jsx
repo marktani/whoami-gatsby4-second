@@ -18,14 +18,13 @@ const Layout = ({ children }) => {
             {
               name: 'keywords',
               content:
-                'farsi, language, learning, poetry, development, graphql, improvement, cultures, meeting, philosophy',
+                'spirituality, poetry, music, philosophy, travel, computer science, languages, coaching, consulting',
             },
           ]}
           link={[
             { rel: 'shortcut icon', type: 'image/png', href: `${icon32}` },
           ]}
         />
-        <Helmet defaultTitle="Blog by Nilan Marktanner" />
         {children}
       </div>
     </>
