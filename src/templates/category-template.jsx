@@ -1,4 +1,4 @@
-import CategoryTemplateDetails from '../components/CategoryTemplateDetails'
+import Feed from '../components/Feed'
 import Layout from '../components/Layout'
 import Sidebar from '../components/Sidebar'
 import { graphql } from 'gatsby'
@@ -14,7 +14,7 @@ class CategoryTemplate extends React.Component {
       <Layout>
         <Helmet title={`${category} - ${title}`} />
         <Sidebar {...this.props} />
-        <CategoryTemplateDetails {...this.props} />
+        <Feed {...this.props} />
       </Layout>
     )
   }

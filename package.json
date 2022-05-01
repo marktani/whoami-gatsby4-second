@@ -29,10 +29,10 @@
     "sass": "^1.50.1"
   },
   "devDependencies": {
+    "@trivago/prettier-plugin-sort-imports": "^3.2.0",
     "lost": "^8.3.1",
     "postcss-pxtorem": "^6.0.0",
-    "prettier": "^2.6.2",
-    "@trivago/prettier-plugin-sort-imports": "^3.2.0"
+    "prettier": "^2.6.2"
   },
   "keywords": [
     "gatsby"

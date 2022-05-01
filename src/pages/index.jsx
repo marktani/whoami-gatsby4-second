@@ -1,5 +1,5 @@
+import Feed from '../components/Feed'
 import Layout from '../components/Layout'
-import Post from '../components/Post'
 import Sidebar from '../components/Sidebar'
 import { graphql } from 'gatsby'
 import * as React from 'react'
@@ -7,12 +7,7 @@ import Helmet from 'react-helmet'
 
 class IndexPage extends React.Component {
   render() {
-    const items = []
     const { title, subtitle } = this.props.data.site.siteMetadata
-    const posts = this.props.data.allMarkdownRemark.edges
-    posts.forEach(post => {
-      items.push(<Post data={post} key={post.node.frontmatter.path} />)
-    })
 
     return (
       <Layout>
@@ -21,9 +16,7 @@ class IndexPage extends React.Component {
           <meta name="description" content={subtitle} />
         </Helmet>
         <Sidebar {...this.props} />
-        <div className="content">
-          <div className="content__inner">{items}</div>
-        </div>
+        <Feed {...this.props} />
       </Layout>
     )
   }
