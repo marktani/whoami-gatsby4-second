@@ -1,3 +1,4 @@
+import Layout from '../components/Layout'
 import Sidebar from '../components/Sidebar'
 import { graphql } from 'gatsby'
 import Link from 'gatsby-link'
@@ -11,7 +12,7 @@ class Categories extends React.Component {
     const categories = this.props.data.allMarkdownRemark.group
 
     return (
-      <div>
+      <Layout>
         <Helmet title={`All Categories - ${title}`} />
         <Sidebar {...this.props} />
         <div className="content">
@@ -40,7 +41,7 @@ class Categories extends React.Component {
             </div>
           </div>
         </div>
-      </div>
+      </Layout>
     )
   }
 }

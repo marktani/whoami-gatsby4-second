@@ -21,7 +21,7 @@ class Menu extends React.Component {
               {'All Articles'}
             </Link>
           </li>
-          {/* <li className="menu__top-item" key={'/categories'}>
+          <li className="menu__top-item" key={'/categories'}>
             <Link
               to={'/categories'}
               className={'menu__top-item-link'}
@@ -31,7 +31,7 @@ class Menu extends React.Component {
             >
               {'Categories'}
             </Link>
-          </li> */}
+          </li>
         </ul>
       </div>
     )
