@@ -1,10 +1,10 @@
 ---
-title: "Past Projects"
+title: "Projects"
 layout: page
-path: "/past-projects"
+path: "/projects"
 ---
 
-Some past projects I'm proud of:
+## Projects
 
 * At [rideOS](https://rideos.ai), I am building software to efficiently move people and things throughout the world, and I'm helping our partners and customers in the automotive, self-driving car and ridehailing industries to use it.
 

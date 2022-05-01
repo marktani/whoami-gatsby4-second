@@ -32,8 +32,8 @@ module.exports = {
         path: '/youtube-channel/',
       },
       {
-        label: 'Past Projects',
-        path: '/past-projects/',
+        label: 'Previous Projects',
+        path: '/projects/',
       },
     ],
     about: [
