@@ -1,14 +1,16 @@
-import React from 'react';
-import Helmet from 'react-helmet';
-import PageTemplateDetails from '../components/PageTemplateDetails';
+import Layout from '../components/Layout'
+import PageTemplateDetails from '../components/PageTemplateDetails'
+import Sidebar from '../components/Sidebar'
 import { graphql } from 'gatsby'
+import React from 'react'
+import Helmet from 'react-helmet'
 
 class PageTemplate extends React.Component {
   render() {
-    const { title, subtitle, url } = this.props.data.site.siteMetadata;
-    const page = this.props.data.markdownRemark;
-    const { title: pageTitle, description: pageDescription } = page.frontmatter;
-    const description = pageDescription !== null ? pageDescription : subtitle;
+    const { title, subtitle, url } = this.props.data.site.siteMetadata
+    const page = this.props.data.markdownRemark
+    const { title: pageTitle, description: pageDescription } = page.frontmatter
+    const description = pageDescription !== null ? pageDescription : subtitle
 
     const preview =
       page.frontmatter.preview &&
@@ -16,15 +18,14 @@ class PageTemplate extends React.Component {
       page.frontmatter.preview.childImageSharp.resize &&
       page.frontmatter.preview.childImageSharp.resize.src
         ? url + page.frontmatter.preview.childImageSharp.resize.src
-        :`${url}/logo/favicon.png`
+        : `${url}/logo/favicon.png`
 
     const finalTitle = `${pageTitle} - ${title}`
 
     return (
-      <div>
+      <Layout>
         <Helmet>
           <title>{`${pageTitle} - ${title}`}</title>
-          <meta name="description" content={description} />
           <meta name="description" content={description} />
           <meta name="twitter:description" content={description} />
           <meta name="twitter:creator" content="@_marktani" />
@@ -37,13 +38,14 @@ class PageTemplate extends React.Component {
           <meta property="og:image" content={preview} />
           <meta property="og:type" content="website" />
         </Helmet>
+        <Sidebar {...this.props} />
         <PageTemplateDetails {...this.props} />
-      </div>
-    );
+      </Layout>
+    )
   }
 }
 
-export default PageTemplate;
+export default PageTemplate
 
 export const pageQuery = graphql`
   query PageBySlug($slug: String!) {
@@ -99,4 +101,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`;
+`

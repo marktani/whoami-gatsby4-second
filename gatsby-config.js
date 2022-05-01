@@ -1,3 +1,5 @@
+const postCssPlugins = require('./postcss-config.js')
+
 module.exports = {
   siteMetadata: {
     url: 'https://nilan.netlify.com',
@@ -9,44 +11,45 @@ module.exports = {
     services: [
       {
         label: 'Coaching',
-        path: '/coaching/'
+        path: '/coaching/',
       },
       {
         label: 'Consulting',
-        path: '/consulting/'
+        path: '/consulting/',
       },
     ],
     projects: [
       {
         label: 'GROWING UP',
-        path: '/growing-up/'
+        path: '/growing-up/',
       },
       {
         label: 'DARK FABRICS',
-        path: '/dark-fabrics/'
+        path: '/dark-fabrics/',
       },
       {
         label: 'YouTube Channel',
-        path: '/youtube-channel/'
+        path: '/youtube-channel/',
       },
       {
         label: 'Past Projects',
-        path: '/past-projects/'
+        path: '/past-projects/',
       },
     ],
     about: [
       {
-        label: 'About',
-        path: '/about/'
-      }
+        label: 'About Nilan',
+        path: '/about/',
+      },
     ],
     author: {
       name: 'Nilan Marktanner',
       email: 'nilan.marktanner@gmail.com',
       twitter: '_marktani',
       github: 'marktani',
-      medium: 'nilan'
-    }
+      medium: 'nilan',
+      youtube: 'UCaeLJt6ReVftlF9aMsaBVkg',
+    },
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -62,42 +65,68 @@ module.exports = {
       resolve: 'gatsby-source-filesystem',
       options: {
         path: `${__dirname}/src/pages`,
-        name: 'pages'
-      }
+        name: 'pages',
+      },
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `Nilan Marktanner`,
+        short_name: `Nilan`,
         start_url: `/`,
         background_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `static/logo/favicon.png`,
       },
     },
     {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
-        fonts: [
-          `roboto\:400,400i,500,700`,
-          `archivo\:400,400i,500,700`
-        ]
-      }
+        fonts: [`roboto\:400,400i,500,700`, `archivo\:400,400i,500,700`],
+      },
     },
     {
       resolve: `gatsby-transformer-remark`,
       options: {
         // Footnotes mode (default: true)
-        footnotes: false,
-        // GitHub Flavored Markdown mode (default: true)
+        footnotes: true,
         gfm: true,
         // Plugins configs
-        plugins: [],
+        plugins: [
+          {
+            resolve: 'gatsby-remark-images',
+            options: {
+              maxWidth: 960,
+            },
+          },
+          {
+            resolve: 'gatsby-remark-responsive-iframe',
+            options: { wrapperStyle: 'margin-bottom: 1.0725rem' },
+          },
+          'gatsby-remark-autolink-headers',
+          {
+            resolve: 'gatsby-remark-prismjs',
+            options: {
+              aliases: {
+                sh: 'shell',
+              },
+            },
+          },
+          'gatsby-remark-copy-linked-files',
+        ],
       },
     },
-    'gatsby-plugin-sass',
+    {
+      resolve: 'gatsby-plugin-sass',
+      options: {
+        implementation: require('sass'),
+        postCssPlugins: [...postCssPlugins],
+        cssLoaderOptions: {
+          camelCase: false,
+        },
+      },
+    },
   ],
 }
