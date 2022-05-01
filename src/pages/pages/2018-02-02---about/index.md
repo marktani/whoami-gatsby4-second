@@ -4,7 +4,7 @@ layout: page
 path: "/about"
 ---
 
-![Sometimes I laugh, sometimes I smile!](./wat.jpg)
+![Sometimes I laugh, sometimes I smile!](./third-eye.jpeg)
 
 I am a poet at heart, a seeker of truth. I care deeply about self-expression and authenticity.
 

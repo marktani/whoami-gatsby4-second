@@ -1,10 +1,10 @@
 ---
-title: "Projects"
+title: "Previous Projects"
 layout: page
 path: "/projects"
 ---
 
-## Projects
+## Selected Projects
 
 * At [rideOS](https://rideos.ai), I am building software to efficiently move people and things throughout the world, and I'm helping our partners and customers in the automotive, self-driving car and ridehailing industries to use it.
 
@@ -27,7 +27,7 @@ path: "/projects"
 * Languages open doors to new worlds. Therefore, I am very interested in **Language Learning**. At [Language Learners Club](https://languagelearners.club/), I was building tools for everyone who's learning a new language.
 
 
-## Achievements
+## Selected Achievements
 
 In early 2020, I supported [rideOS](https://rideos.ai) in growing their newly established **partner engineering** team in San Francisco, and eventually became the first partner engineer in their new Berlin office. **I am fully responsible for the success and happiness of all our partners in the EMEA region**.
 
